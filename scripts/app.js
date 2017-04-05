@@ -4,7 +4,11 @@ $(document).on("ready", function(){
   searchForm.on('click', hijack);
   function hijack(event){
     event.preventDefault();
+    userAjax() ;
+  }   //  function hijack
+});   // document
 
+function userAjax() {
     $.ajax( {
       method: "GET",
       // url: "https://github.com/Giphy/GiphyAPI", // this is a "relative" link
@@ -19,5 +23,4 @@ $(document).on("ready", function(){
       console.log(responseData);
       // celebrate!
     };  // function onSuccess
-  }   //  function hijack
-});   // document
+}  // userAjax
