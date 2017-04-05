@@ -29,8 +29,7 @@ function userAjax() {
         var thisImageUrl = this.images.fixed_height.url;  // server returned url of gif
         if (thisImageUrl.slice(0,4) === "http" ){  // last url not for gif
           console.log(thisImageUrl);
-          var loader_img = '<img src=thisImageUrl >';
-          $(".col-sm-4").append(loader_img);
+          $(".col-sm-4").append('<img src=' + thisImageUrl + '>');  // need to concatinate !
         }
     })
   });
