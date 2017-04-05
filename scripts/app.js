@@ -26,7 +26,12 @@ function userAjax() {
 
   xhr.done(function (data) {    // this prints out all urls with gifs
     $.each(data.data, function () {
-        console.log(this.images.fixed_height.url);
+        var thisImageUrl = this.images.fixed_height.url;  // server returned url of gif
+        if (thisImageUrl.slice(0,4) === "http" ){  // last url not for gif
+          console.log(thisImageUrl);
+          var loader_img = '<img src=thisImageUrl >';
+          $(".col-sm-4").append(loader_img);
+        }
     })
   });
 
